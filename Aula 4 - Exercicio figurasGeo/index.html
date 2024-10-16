@@ -4,18 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Figuras Geométricas</title>
 </head>
 <body>
-    <h1>Calculadora de Figuras Geométricas</h1>
+    <div class="container">
+        <h1>Calculadora de Figuras Geométricas</h1>
     
-    <form id="formulario">
-        <label for="inputLados">Insira a quantidade de lados:</label>
-        <input type="text" id="inputLados" name="inputLados" placeholder="Ex: 3 para triângulo">
-        <button type="submit" value="Submit" id="submit">Enviar</button>
-    </form>
+        <form id="formulario">
+            <label for="inputLados">Insira a quantidade de lados:</label>
+            <input type="text" id="inputLados" name="inputLados" placeholder="Ex: 3 para triângulo">
+            <button type="submit" value="Submit" id="submit">Enviar</button>
+        </form>
+        <div id="output"></div> 
+    </div>
 
-    <div id="output"></div> 
+
+
     <script src="script.js"></script>
 </body>
 </html>

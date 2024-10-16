@@ -22,27 +22,27 @@ form.addEventListener('submit', function(event) {
       } else if (nLados === 5) {
           figura = "Pentágono";
           perimetroFormula = "P = 5 * lado";
-          areaFormula = "A = ";
+          areaFormula = "A = 5 * L * a";
       } else if (nLados === 6) {
           figura = "Hexágono";
           perimetroFormula = "P = 6 * lado";
-          areaFormula = "A = ";
+          areaFormula = "A = (3L²√3) / 2";
       } else if (nLados === 7) {
           figura = "Heptágono";
           perimetroFormula = "P = 7 * lado";
-          areaFormula = "A = ";
+          areaFormula = "A = (7/2) * L * a";
       } else if (nLados === 8) {
           figura = "Octógono";
           perimetroFormula = "P = 8 * lado";
-          areaFormula = "A = ";
+          areaFormula = "A = 4 * L * a";
       } else if (nLados === 9) {
           figura = "Eneágono";
           perimetroFormula = "P = 9 * lado";
-          areaFormula = "A = ";
+          areaFormula = "A = (P * a ) / 2";
       } else if (nLados === 10) {
           figura = "Decágono";
           perimetroFormula = "P = 10 * lado";
-          areaFormula = "A = ";
+          areaFormula = "A = n * Aₜ = (n * L * a) / 2 ";
       } else {
           figura = `Polígono de ${nLados} lados`;
           perimetroFormula = `P = ${nLados} * lado`;
@@ -50,13 +50,21 @@ form.addEventListener('submit', function(event) {
       }
 
       imgPath = `./img/${nLados - 2}.png`;
+      if(nLados > 10){
+        document.getElementById('output').innerHTML = `
+        <h2>${figura}</h2>
+        <p>Fórmula do Perímetro: ${perimetroFormula}</p>
+        <p>Fórmula da Área: ${areaFormula}</p>
+    `;
+      } else {
+        document.getElementById('output').innerHTML = `
+        <h2>${figura}</h2>
+        <p>Fórmula do Perímetro: ${perimetroFormula}</p>
+        <p>Fórmula da Área: ${areaFormula}</p>
+        <img src="${imgPath}" alt="Imagem de um ${figura}">
+    `;
+      }
 
-      document.getElementById('output').innerHTML = `
-          <h2>${figura}</h2>
-          <p>Fórmula do Perímetro: ${perimetroFormula}</p>
-          <p>Fórmula da Área: ${areaFormula}</p>
-          <img src="${imgPath}" alt="Imagem de um ${figura}">
-      `;
     }
   }
 );
